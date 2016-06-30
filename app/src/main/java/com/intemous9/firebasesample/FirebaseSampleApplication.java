@@ -3,19 +3,21 @@ package com.intemous9.firebasesample;
 import android.app.Application;
 import android.content.res.Configuration;
 
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.intemous9.firebasesample.utils.LocalStorageUtil;
 
-public class MyApplication extends Application {
+public class FirebaseSampleApplication extends Application {
 
-    private static MyApplication sApp;
+    private static FirebaseSampleApplication sApp;
 
-    public MyApplication() {
+    private FirebaseAnalytics mFirebaseAnalytics;
 
+    public FirebaseSampleApplication() {
     }
 
-    public static MyApplication getInstance() {
+    public static FirebaseSampleApplication getInstance() {
         if (sApp == null) {
-            sApp = new MyApplication();
+            sApp = new FirebaseSampleApplication();
         }
         return sApp;
 
@@ -36,6 +38,9 @@ public class MyApplication extends Application {
         sApp = this;
         //Check if a device is a tablet
         LocalStorageUtil.putBoolean("is_tablet", getResources().getBoolean(R.bool.is_tablet));
+
+        // Obtain the FirebaseAnalytics instance.
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
     }
 
     public boolean isLandscape() {

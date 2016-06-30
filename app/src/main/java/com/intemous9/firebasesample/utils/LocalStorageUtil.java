@@ -4,7 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 
-import com.intemous9.firebasesample.MyApplication;
+import com.intemous9.firebasesample.FirebaseSampleApplication;
 import com.intemous9.firebasesample.consts.S;
 
 public class LocalStorageUtil {
@@ -14,7 +14,7 @@ public class LocalStorageUtil {
     }
 
     public static SharedPreferences getLocalStorage() {
-        return MyApplication.getInstance().getSharedPreferences(S.common_pref, Context.MODE_PRIVATE);
+        return FirebaseSampleApplication.getInstance().getSharedPreferences(S.common_pref, Context.MODE_PRIVATE);
     }
 
     public static String getString(String key) {

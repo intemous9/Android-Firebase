@@ -2,18 +2,10 @@ package com.intemous9.firebasesample.fragments;
 
 import android.app.Activity;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
 import android.view.View;
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.content.res.Resources;
 
-import com.intemous9.firebasesample.MyApplication;
+import com.intemous9.firebasesample.FirebaseSampleApplication;
 
 
 public class BaseFragment extends Fragment {
@@ -43,7 +35,7 @@ public class BaseFragment extends Fragment {
      * @return Resources
      */
     public Resources getResourcesFromApplication() {
-        return MyApplication.getInstance().getResources();
+        return FirebaseSampleApplication.getInstance().getResources();
     }
 
 }
