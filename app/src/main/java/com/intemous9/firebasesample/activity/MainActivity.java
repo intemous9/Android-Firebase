@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
         // FirebaseAnalyticsにイベントログを送る
         Bundle fireBundle = new Bundle();
-        fireBundle.putString("test", "テストでイベントログを送ってます");
+        fireBundle.putString("test", "テストでイベントログを送信");
         FirebaseAnalytics analytics = FirebaseAnalytics.getInstance(this);
         analytics.logEvent(FirebaseAnalytics.Event.APP_OPEN, fireBundle);
 
