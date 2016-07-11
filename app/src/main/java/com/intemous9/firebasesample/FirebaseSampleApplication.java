@@ -1,13 +1,15 @@
 package com.intemous9.firebasesample;
 
 import android.app.Application;
+import android.content.Context;
+
 import com.google.firebase.analytics.FirebaseAnalytics;
 
 public class FirebaseSampleApplication extends Application {
 
     private static FirebaseSampleApplication sApp;
 
-    private FirebaseAnalytics mFirebaseAnalytics;
+    private static FirebaseAnalytics mFirebaseAnalytics;
 
     public FirebaseSampleApplication() {
     }
@@ -27,6 +29,14 @@ public class FirebaseSampleApplication extends Application {
 
         // Obtain the FirebaseAnalytics instance.
         mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
+    }
+
+    public static FirebaseAnalytics getFirebaseAnalyticsInstance(Context context) {
+        if (mFirebaseAnalytics == null) {
+            mFirebaseAnalytics = FirebaseAnalytics.getInstance(context);
+        }
+
+        return mFirebaseAnalytics;
     }
 
 }
